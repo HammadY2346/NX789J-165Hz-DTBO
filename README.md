@@ -55,14 +55,26 @@ mode. Nothing else in the dtbo is changed. See
    `/sdcard/dtbo_stock_<slot>_<date>.img`, writes the 165 Hz image, and asks you to reboot.
 4. Reboot.
 
-### Option B — Raw image (fastboot)
-```sh
-# back up first!
-adb shell su -c "dd if=/dev/block/by-name/dtbo$(getprop ro.boot.slot_suffix) of=/sdcard/dtbo.stock.img"
-adb reboot bootloader
-fastboot flash dtbo NX789J-dtbo-165-A16.img     # or -A15 for Android 15
-fastboot reboot
-```
+### Option B — Raw image via EDL (ZTE / nubia tool)
+Recommended on RedMagic, where fastboot can be unreliable. Flash **only the `dtbo`
+partition** — do not touch anything else.
+
+1. Back up your current dtbo first (this is your restore image — pull it to your PC):
+   ```sh
+   adb shell su -c "dd if=/dev/block/by-name/dtbo$(getprop ro.boot.slot_suffix) of=/sdcard/dtbo.stock.img"
+   ```
+2. Boot the phone into **EDL / 9008** mode and open your **ZTE / nubia EDL tool box**
+   (QFIL or `edl` work too, with the SM8750 firehose).
+3. Write **only** the `dtbo` partition with `NX789J-dtbo-165-A16.img` (or `-A15` for
+   Android 15):
+   ```sh
+   # e.g. with bkerler's edl:
+   edl w dtbo NX789J-dtbo-165-A16.img
+   ```
+4. Reboot.
+
+> `fastboot flash dtbo <img>` also works if your fastboot is set up, but EDL is the
+> reliable, always-recoverable route on RedMagic. Do **not** use `fastboot boot`.
 
 ## Enable 165 Hz
 
@@ -82,11 +94,13 @@ adb shell "dumpsys SurfaceFlinger | grep -iE 'activeMode|peak-refresh|FPS '"
 
 ## Restore stock
 
+Flash your stock dtbo back the same way — **EDL**, writing **only** the `dtbo`
+partition with the backup you made (or the one the installer zip saved to `/sdcard`):
 ```sh
-adb reboot bootloader
-fastboot flash dtbo dtbo.stock.img     # the backup you made / the zip saved to /sdcard
-fastboot reboot
+# with bkerler's edl (or use your ZTE/nubia tool box / QFIL):
+edl w dtbo dtbo.stock.img
 ```
+Because EDL can rewrite any partition, a bad dtbo flash is always recoverable.
 
 ## After a firmware update
 
