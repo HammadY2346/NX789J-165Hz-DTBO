@@ -37,8 +37,10 @@ mode. Nothing else in the dtbo is changed. See
 
 | Firmware | Installer zip (Magisk/KSU) | Raw image (fastboot) |
 |----------|----------------------------|----------------------|
-| **Android 16** | `NX789J-165Hz-dtbo-installer-v1.0.zip` | `NX789J-dtbo-165-A16.img` |
-| **Android 15** | `NX789J-165Hz-dtbo-installer-A15-v1.0.zip` | `NX789J-dtbo-165-A15.img` |
+| **Android 16** | [NX789J-165Hz-dtbo-installer-v1.0.zip](downloads/NX789J-165Hz-dtbo-installer-v1.0.zip) | [NX789J-dtbo-165-A16.img](downloads/NX789J-dtbo-165-A16.img) |
+| **Android 15** | [NX789J-165Hz-dtbo-installer-A15-v1.0.zip](downloads/NX789J-165Hz-dtbo-installer-A15-v1.0.zip) | [NX789J-dtbo-165-A15.img](downloads/NX789J-dtbo-165-A15.img) |
+
+> Download: open a file above → **Download raw file** (the button top-right of the file view).
 
 > Build from **your firmware's own dtbo** — do not cross-flash A16 on A15.
 > The DEV0 panel block is identical across the two, but the DEV1 variant and the
