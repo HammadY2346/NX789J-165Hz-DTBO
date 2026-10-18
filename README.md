@@ -1,4 +1,4 @@
-# RedMagic 10 Pro / 10S Pro (NX789J) — 165 Hz DTBO
+# RedMagic 10 Pro / 10S Pro — NX789J 165Hz DTBO (Android 15 & 16): display overclocking to a stable 165 Hz refresh rate.
 
 Adds a **native 165 Hz** display mode to the RedMagic 10 Pro / 10S Pro
 (`NX789J` / `NX789S`), which ship capped at 144 Hz. Works on **Android 15 and
