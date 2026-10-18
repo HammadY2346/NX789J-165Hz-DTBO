@@ -31,11 +31,11 @@ mode. Nothing else in the dtbo is changed. See
 - RedMagic 10 Pro / 10S Pro (`NX789J` or `NX789S`), Android 15 **or** 16.
 - **Unlocked bootloader** with AVB verification disabled (if you're already
   rooted via a patched `init_boot`, this is done).
-- Root (KernelSU / Magisk) for the installer zip, **or** fastboot for the raw image.
+- Root (KernelSU / Magisk) for the installer zip, **or** EDL / fastboot for the raw image.
 
 ## Pick the right file for your firmware
 
-| Firmware | Installer zip (Magisk/KSU) | Raw image (fastboot) |
+| Firmware | Installer zip (Magisk/KSU) | Raw image (EDL / fastboot) |
 |----------|----------------------------|----------------------|
 | **Android 16** | [NX789J-165Hz-dtbo-installer-v1.0.zip](downloads/NX789J-165Hz-dtbo-installer-v1.0.zip) | [NX789J-dtbo-165-A16.img](downloads/NX789J-dtbo-165-A16.img) |
 | **Android 15** | [NX789J-165Hz-dtbo-installer-A15-v1.0.zip](downloads/NX789J-165Hz-dtbo-installer-A15-v1.0.zip) | [NX789J-dtbo-165-A15.img](downloads/NX789J-dtbo-165-A15.img) |
