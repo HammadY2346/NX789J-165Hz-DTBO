@@ -17,12 +17,15 @@ math checks out exactly.
 > (recoverable) and, in rare cases, could stress the panel. Flashing is at your
 > own risk. Keep your stock `dtbo` backup.
 
-> ⚠️ **Android 15: not recommended for now.** On Android 15 **global** firmware,
-> switching to 165 Hz through an LSPosed module caused **screen flicker and
-> reboots**. Android 15 seems stricter than Android 16 here, and it has not been
-> re-tested yet. Until it is, use this mod on **Android 16** (China or global).
-> If you still try the Android 15 file, keep your stock `dtbo` backup ready, and
-> don't force 165 Hz through a module:
+> ⚠️ **Android 15: not recommended for now.** On Android 15 (RedMagic OS 10),
+> **Settings → Display → Refresh rate does not show 165 Hz** even after flashing;
+> its list stops at 144 Hz. That's why selecting 165 Hz there needs an LSPosed
+> module. On Android 15 **global** firmware, switching to 165 Hz through such a
+> module caused **screen flicker and reboots**. Android 15 seems stricter than
+> Android 16 here, and it has not been re-tested yet. Until it is, use this mod
+> on **Android 16** (China or global), where Settings lists 165 Hz by itself and
+> no module is needed. If you still try the Android 15 file, keep your stock
+> `dtbo` backup ready, and don't force 165 Hz through a module:
 > [AutoHz Max](https://github.com/HammadY2346/RedMagic-AutoHz-Max) 1.3 and later
 > no longer run on Android 15.
 
@@ -95,7 +98,10 @@ adb shell settings put system peak_refresh_rate 165
 adb shell settings put system min_refresh_rate 60    # 60 lets it idle down; set 165 to force constant
 ```
 Also set the highest option in **RedMagic Settings → Display → Refresh rate**, and
-make sure no battery saver / 60 Hz lock is active.
+make sure no battery saver / 60 Hz lock is active. On Android 16 that page lists
+**165 Hz** by itself. On Android 15 it stops at 144 Hz and only an LSPosed module
+can add 165 Hz there, which is not recommended right now (see the Android 15
+warning at the top).
 
 Verify:
 ```sh
