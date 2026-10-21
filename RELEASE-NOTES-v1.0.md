@@ -2,6 +2,10 @@
 
 Native 165 Hz for the RedMagic 10 Pro / 10S Pro (NX789J/NX789S), Android 15 & 16.
 
+> ⚠️ **Android 15: not recommended for now.** On Android 15 global firmware,
+> switching to 165 Hz through an LSPosed module caused screen flicker and reboots.
+> Android 15 has not been re-tested yet; use Android 16 (China or global).
+
 **Assets**
 - `NX789J-165Hz-dtbo-installer-v1.0.zip`     — Android 16, Magisk/KSU installer
 - `NX789J-165Hz-dtbo-installer-A15-v1.0.zip` — Android 15, Magisk/KSU installer

@@ -1,19 +1,30 @@
-# RedMagic 10 Pro / 10S Pro — NX789J 165Hz DTBO (Android 15 & 16): display overclocking to a stable 165 Hz refresh rate.
+# RedMagic 10 Pro / 10S Pro — NX789J 165Hz DTBO (Android 16): display overclocking to a stable 165 Hz refresh rate.
 
 Adds a **native 165 Hz** display mode to the RedMagic 10 Pro / 10S Pro
-(`NX789J` / `NX789S`), which ship capped at 144 Hz. Works on **Android 15 and
-Android 16**. Confirmed running — SurfaceFlinger reports a true 165.00 Hz active
-mode and the panel clock math checks out exactly.
+(`NX789J` / `NX789S`), which ship capped at 144 Hz. Made and tested on
+**Android 16**, where it works the same on China and global firmware. Confirmed
+running — SurfaceFlinger reports a true 165.00 Hz active mode and the panel clock
+math checks out exactly.
 
 ![device](https://img.shields.io/badge/device-NX789J%20%2F%20NX789S-red)
 ![panel](https://img.shields.io/badge/panel-RM692H5-blue)
-![android](https://img.shields.io/badge/Android-15%20%26%2016-green)
+![android](https://img.shields.io/badge/Android-16-green)
+![android15](https://img.shields.io/badge/Android%2015-not%20recommended-yellow)
 ![refresh](https://img.shields.io/badge/refresh-144Hz%20%E2%86%92%20165Hz-orange)
 
 > ⚠️ **Read the warnings.** This drives the panel above its rated 144 Hz by
 > modifying the device-tree overlay. A bad flash gives a **black screen**
 > (recoverable) and, in rare cases, could stress the panel. Flashing is at your
 > own risk. Keep your stock `dtbo` backup.
+
+> ⚠️ **Android 15: not recommended for now.** On Android 15 **global** firmware,
+> switching to 165 Hz through an LSPosed module caused **screen flicker and
+> reboots**. Android 15 seems stricter than Android 16 here, and it has not been
+> re-tested yet. Until it is, use this mod on **Android 16** (China or global).
+> If you still try the Android 15 file, keep your stock `dtbo` backup ready, and
+> don't force 165 Hz through a module:
+> [AutoHz Max](https://github.com/HammadY2346/RedMagic-AutoHz-Max) 1.3 and later
+> no longer run on Android 15.
 
 ---
 
@@ -28,7 +39,7 @@ mode. Nothing else in the dtbo is changed. See
 
 ## Requirements
 
-- RedMagic 10 Pro / 10S Pro (`NX789J` or `NX789S`), Android 15 **or** 16.
+- RedMagic 10 Pro / 10S Pro (`NX789J` or `NX789S`) on **Android 16** (Android 15: see the warning above).
 - **Unlocked bootloader** with AVB verification disabled (if you're already
   rooted via a patched `init_boot`, this is done).
 - Root (KernelSU / Magisk) for the installer zip, **or** EDL / fastboot for the raw image.
@@ -38,7 +49,7 @@ mode. Nothing else in the dtbo is changed. See
 | Firmware | Installer zip (Magisk/KSU) | Raw image (EDL / fastboot) |
 |----------|----------------------------|----------------------|
 | **Android 16** | [installer zip](https://github.com/HammadY2346/NX789J-165Hz-DTBO/releases/download/v1.0/NX789J-165Hz-dtbo-A16-installer-v1.0.zip) | [dtbo_165hz.A16.img](https://github.com/HammadY2346/NX789J-165Hz-DTBO/releases/download/v1.0/dtbo_165hz.A16.img) |
-| **Android 15** | [installer zip](https://github.com/HammadY2346/NX789J-165Hz-DTBO/releases/download/v1.0/NX789J-165Hz-dtbo-installer-A15-v1.0.zip) | [dtbo_165_a15.img](https://github.com/HammadY2346/NX789J-165Hz-DTBO/releases/download/v1.0/dtbo_165_a15.img) |
+| **Android 15** ⚠️ not recommended, see the warning | [installer zip](https://github.com/HammadY2346/NX789J-165Hz-DTBO/releases/download/v1.0/NX789J-165Hz-dtbo-installer-A15-v1.0.zip) | [dtbo_165_a15.img](https://github.com/HammadY2346/NX789J-165Hz-DTBO/releases/download/v1.0/dtbo_165_a15.img) |
 
 > All files live on the [**Releases**](https://github.com/HammadY2346/NX789J-165Hz-DTBO/releases/latest) page — grab the one matching your firmware.
 
